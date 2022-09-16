@@ -31,10 +31,11 @@ export default {
       Height: null, // 内容区域的高
       activeIndex: '1',
       pageMap: {
-        1: '/blog',
-        2: '/work',
-        3: '/life',
-        4: '/photo'
+        1: '/home',
+        2: '/blog',
+        3: '/work',
+        4: '/life',
+        5: '/photo'
       }
     }
   },
@@ -48,18 +49,18 @@ export default {
   methods: {
     // 设置当前窗口内容高度
     setUpHeight() {
-      console.log(this.windowWidth)
+      // console.log(this.windowWidth)
       if (this.windowWidth <= 992) {
         this.headerHeight = 393
         console.log(123)
       }
-      console.log(this.headerHeight)
+      // console.log(this.headerHeight)
       // 动态设置内容高度 让footer始终居底   header+footer的高度是
       this.Height = document.documentElement.clientHeight - this.headerHeight // 监听浏览器窗口变化
-      console.log(this.headerHeight)
+      //  console.log(this.headerHeight)
       window.onresize = () => {
-        console.log(this.headerHeight)
-        console.log(1234567)
+        //  console.log(this.headerHeight)
+        //  console.log(1234567)
         this.Height = document.documentElement.clientHeight - 350
       }
     },

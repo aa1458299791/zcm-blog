@@ -90,6 +90,8 @@ export default Vue.extend({
           uploadImage: {
             //   server: 'https://api.iqtiantian.com/public/upload',
             server: 'http://1.15.171.11:3000/img/addImg',
+            // 单个文件的最大体积限制，默认为 2M
+            maxFileSize: 20 * 1024 * 1024, // 20M
             // 自定义插入图片
             customInsert(res, insertFn) {
               // res 即服务端的返回结果
@@ -122,11 +124,13 @@ export default Vue.extend({
     //  上传成功时的回调
     handleSuccess(response, file, fileList) {
       //  console.log(response.imgUrl, file, fileList)
-      const { imgUrl } = response
+      const imgUrl = response.data[0]
+      console.log(response.data[0], imgUrl, 123123)
       // console.log(imgUrl, id)
-      const imgSrc = 'http://1.15.171.11:3000/' + imgUrl
+      // const imgSrc = 'http://1.15.171.11:3000/images/' + imgUrl
+      // const imgSrc = 'http://1.15.171.11:3000/images/' + imgUrl
 
-      this.imgUrlList.push(imgSrc)
+      this.imgUrlList.push(imgUrl)
 
       // this.id = id
     },

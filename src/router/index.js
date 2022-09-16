@@ -15,9 +15,14 @@ const routes = [
     path: '/',
     name: 'home',
     component: HomeView,
-    redirect: '/blog',
+    redirect: '/home',
     // 设置子路由实现页内跳转
     children: [
+      // 首页
+      {
+        path: 'home',
+        component: () => import('../views/HomePage')
+      },
       // 博客
       {
         path: 'blog',

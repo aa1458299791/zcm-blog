@@ -1,14 +1,35 @@
 <template>
   <div class="article">
     <div v-html="articleData.content"></div>
+    <div class="split_line">
+      <el-divider content-position="center">终</el-divider>
+    </div>
+    <div class="message_board">
+      <MessageBoard
+        :MessageBoardList="MessageBoardList"
+        @addLeavingAmessage="addLeavingAmessage"
+      ></MessageBoard>
+    </div>
   </div>
 </template>
 
 <script>
+import MessageBoard from '../MessageBoard'
+
 export default {
   name: 'Article',
+  components: {
+    MessageBoard
+  },
   props: {
-    articleData: { type: Object }
+    articleData: { type: Object },
+    MessageBoardList: { type: Array }
+  },
+  methods: {
+    addLeavingAmessage(imgSrc, userName, textarea) {
+      // console.log(imgSrc, userName, textarea)
+      this.$emit('addLeavingAmessage', imgSrc, userName, textarea)
+    }
   }
 }
 </script>
@@ -18,6 +39,18 @@ export default {
   background-color: #3b3c3e;
   padding: 15px;
   border-radius: 10px;
+  overflow: hidden;
+  // 分割
+  .split_line {
+    .el-divider {
+      background-color: #e369a2;
+    }
+    .el-divider__text {
+      border-radius: 15px;
+      background-color: #918787;
+      color: #fff;
+    }
+  }
   // 标题
   .title {
   }

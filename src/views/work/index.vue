@@ -47,7 +47,7 @@
 <script>
 import contentBox from './components/contentBox'
 export default {
-  name: 'Blog',
+  name: 'Work',
   components: { contentBox },
   data() {
     return {
@@ -94,7 +94,7 @@ export default {
     },
     // h获取博客页面信息
     initData() {
-      this.$http.get('work/list').then(res => {
+      this.$http.get('http://1.15.171.11:3000/work/list').then(res => {
         console.log(res)
         const { status, data } = res
         if (status === 200) {
@@ -130,7 +130,7 @@ export default {
     },
     // 点击进入博客详情
     blogDetails(index) {
-      console.log(index)
+      //  console.log(index)
       this.$router.push({
         path: 'work/details',
         query: {

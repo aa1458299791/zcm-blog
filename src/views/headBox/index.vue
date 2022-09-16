@@ -12,24 +12,29 @@
       <el-row class="content" :gutter="1">
         <!-- <div > -->
         <!-- <el-col :xs="0" :sm="0" :md="6" :lg="6" :xl="6">&nbsp;</el-col> -->
-        <el-col :xs="2" :sm="2" :md="4" :lg="6" :xl="6">&nbsp;</el-col>
-        <el-col :xs="5" :sm="5" :md="2" :lg="2" :xl="2">
+        <el-col :xs="0" :sm="2" :md="4" :lg="6" :xl="6">&nbsp;</el-col>
+        <el-col :xs="5" :sm="4" :md="2" :lg="2" :xl="2">
           <el-menu-item index="1" :class="activeIndex === '1' ? 'select' : ''">
+            <el-button type="primary" plain>首页</el-button>
+          </el-menu-item>
+        </el-col>
+        <el-col :xs="5" :sm="4" :md="2" :lg="2" :xl="2">
+          <el-menu-item index="2" :class="activeIndex === '2' ? 'select' : ''">
             <el-button type="primary" plain>博客</el-button>
           </el-menu-item>
         </el-col>
-        <el-col :xs="5" :sm="5" :md="2" :lg="2" :xl="2">
-          <el-menu-item index="2" :class="activeIndex === '2' ? 'select' : ''">
+        <el-col :xs="5" :sm="4" :md="2" :lg="2" :xl="2">
+          <el-menu-item index="3" :class="activeIndex === '3' ? 'select' : ''">
             <el-button type="primary" plain>工作</el-button>
           </el-menu-item>
         </el-col>
-        <el-col :xs="5" :sm="5" :md="2" :lg="2" :xl="2">
-          <el-menu-item index="3" :class="activeIndex === '3' ? 'select' : ''">
+        <el-col :xs="5" :sm="4" :md="2" :lg="2" :xl="2">
+          <el-menu-item index="4" :class="activeIndex === '4' ? 'select' : ''">
             <el-button type="primary" plain>生活</el-button>
           </el-menu-item>
         </el-col>
-        <el-col :xs="5" :sm="5" :md="2" :lg="2" :xl="2">
-          <el-menu-item index="4" :class="activeIndex === '4' ? 'select' : ''">
+        <el-col :xs="4" :sm="4" :md="2" :lg="2" :xl="2">
+          <el-menu-item index="5" :class="activeIndex === '5' ? 'select' : ''">
             <el-button type="primary" plain>影集</el-button>
           </el-menu-item>
         </el-col>

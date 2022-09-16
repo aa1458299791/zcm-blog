@@ -1,17 +1,23 @@
 <template>
   <div class="photo">
-    这是photo页面
+    <Wrapper class="wrapper"></Wrapper>
+    <!-- <div class="radio_broadcast">
+      <i class="el-icon-message-solid"></i>
+      点击图片查看大图哦！
+    </div> -->
     <PhotoContent :originData="originData"></PhotoContent>
   </div>
 </template>
 
 <script>
 import PhotoContent from './components/PhotoContent'
+import Wrapper from './components/Wrapper'
 // import axios from 'axios'
 export default {
   name: 'photo',
   components: {
-    PhotoContent
+    PhotoContent,
+    Wrapper
   },
   data() {
     return {
@@ -43,7 +49,23 @@ export default {
 
 <style lang="scss" scoped>
 .photo {
-  // width: 100%;
-  padding: 15px;
+  //width: 100%;
+  height: 100%;
+  padding: 0 15px 15px 15px;
+  overflow: hidden;
+  perspective: 7000px;
+  .radio_broadcast {
+    background-color: #0f1010;
+    padding: 5px;
+    border-radius: 15px;
+    font-size: 20px;
+    color: #37cece;
+    text-align: center;
+    //margin-top: -30px;
+    margin-bottom: 10px;
+  }
+  .wrapper {
+    top: -25px;
+  }
 }
 </style>

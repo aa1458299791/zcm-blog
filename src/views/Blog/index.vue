@@ -130,7 +130,7 @@ export default {
     },
     // 点击进入博客详情
     blogDetails(index) {
-      console.log(index)
+      //  console.log(index)
       this.$router.push({
         path: 'blog/details',
         query: {
