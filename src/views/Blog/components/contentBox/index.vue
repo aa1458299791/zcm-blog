@@ -103,7 +103,9 @@ export default {
     }
     // 文字内容
     .written_words {
+      // 溢出隐藏
       overflow: hidden;
+      // 省略号
       text-overflow: ellipsis;
       /*弹性伸缩盒子模型显示*/
       display: -webkit-box;

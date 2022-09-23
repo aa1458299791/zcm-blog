@@ -41,25 +41,38 @@ export default {
   },
   created() {
     this.handleSelect()
+    // 初始化获取一次窗口宽度
     this.getWindowWidth()
+    // 动态获取窗口高度
+    window.addEventListener('resize', this.getWindowWidth)
   },
   mounted() {
     this.setUpHeight()
   },
+  // watch: {
+  //   windowWidth(val) {
+  //     // const that = this
+  //     console.log('实时屏幕宽度：', val, this.windowHeight)
+  //   }
+  // },
   methods: {
     // 设置当前窗口内容高度
     setUpHeight() {
       // console.log(this.windowWidth)
       if (this.windowWidth <= 992) {
         this.headerHeight = 393
-        console.log(123)
+        //  console.log(123)
       }
+      // console.log(window.innerWidth)
+
+      // console.log(this.$store.state.windowWidth)
+      // this.$store.commit('MODIFY_WIDTH', window.innerWidth)
       // console.log(this.headerHeight)
       // 动态设置内容高度 让footer始终居底   header+footer的高度是
       this.Height = document.documentElement.clientHeight - this.headerHeight // 监听浏览器窗口变化
-      //  console.log(this.headerHeight)
+      // console.log(this.Height)
       window.onresize = () => {
-        //  console.log(this.headerHeight)
+        // console.log(this.headerHeight)
         //  console.log(1234567)
         this.Height = document.documentElement.clientHeight - 350
       }
@@ -67,6 +80,11 @@ export default {
     // 获取当前窗口宽度
     getWindowWidth() {
       this.windowWidth = window.innerWidth
+      // console.log(this.windowWidth)
+      //  console.log(this.$store.state.windowWidth)
+      // 调用方法，把获取到的窗口宽度定义到vuex 全局状态管理里面
+      this.$store.commit('MODIFY_WIDTH', this.windowWidth)
+      // console.log('当前窗口宽度vuev，获取vuex里面的数据' + this.$store.state.windowWidth)
     },
     // 路由跳转
     pathRouter(activeIndex = 1) {

@@ -6,29 +6,28 @@
       height="1080px"
       arrow="always"
       direction="vertical"
+      indicator-position="none"
       ref="carousel"
       @change="switchCard"
     >
       <el-carousel-item name="0">
         <Welcome @next="next"></Welcome>
-        <div @click="prev"><h1>上</h1></div>
-        开发中
-        <div @click="next"><h1>下</h1></div>
       </el-carousel-item>
       <el-carousel-item name="1">
-        <div @click="prev"><h1>上</h1></div>
-        开发中
-        <div @click="next"><h1>下</h1></div>
+        <Personal
+          @next="next"
+          @prev="prev"
+          :isShopTotle="isShopTotle"
+        ></Personal>
       </el-carousel-item>
       <el-carousel-item name="2">
-        <div @click="prev"><h1>上</h1></div>
-        开发中
-        <div @click="next"><h1>下</h1></div>
+        <MySkills @next="next" @prev="prev"></MySkills>
       </el-carousel-item>
       <el-carousel-item name="3">
-        <div @click="prev"><h1>上</h1></div>
-        开发中
-        <div @click="next"><h1>下</h1></div>
+        <MyProjects @next="next" @prev="prev"></MyProjects>
+      </el-carousel-item>
+      <el-carousel-item name="4">
+        <WorkExperience @next="next" @prev="prev"></WorkExperience>
       </el-carousel-item>
     </el-carousel>
   </div>
@@ -36,14 +35,23 @@
 
 <script>
 import Welcome from './page/Welcome'
+import Personal from './page/Personal'
+import MySkills from './page/MySkills'
+import MyProjects from './page/MyProjects'
+import WorkExperience from './page/WorkExperience'
 export default {
   name: 'HomePage',
   components: {
-    Welcome
+    Welcome,
+    Personal,
+    MySkills,
+    MyProjects,
+    WorkExperience
   },
   data() {
     return {
-      cardIndex: 0
+      cardIndex: 0,
+      isShopTotle: false
     }
   },
   methods: {
@@ -52,8 +60,14 @@ export default {
       this.$refs.carousel.prev()
     },
     // 切换下一张
-    next(index) {
+    next(open) {
       this.$refs.carousel.next()
+      // console.log(open)
+      if (open === 'open') {
+        console.log(this.isShopTotle)
+        this.isShopTotle = true
+        console.log(this.isShopTotle)
+      }
     },
     switchLower(index) {
       // this.setActiveItem(index)

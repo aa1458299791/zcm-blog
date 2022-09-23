@@ -3,9 +3,7 @@
     <div class="exhibition">
       <div class="content_box">
         <el-row>
-          <el-col :xs="1" :sm="2" :md="6" :lg="6" :xl="6">
-            &nbsp;功能正在完善中
-          </el-col>
+          <el-col :xs="1" :sm="2" :md="6" :lg="6" :xl="6">&nbsp;</el-col>
           <!-- 中间内容  el-empty空页面  -->
           <el-col
             :xs="22"
@@ -35,9 +33,7 @@
             ></el-pagination>
           </el-col>
 
-          <el-col :xs="1" :sm="2" :md="6" :lg="6" :xl="6">
-            &nbsp; 功能正在完善中
-          </el-col>
+          <el-col :xs="1" :sm="2" :md="6" :lg="6" :xl="6">&nbsp;</el-col>
         </el-row>
       </div>
     </div>

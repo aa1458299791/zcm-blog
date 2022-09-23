@@ -37,7 +37,8 @@ export default {
         console.log(res)
         const { data, status } = res
         if (status === 200) {
-          this.originData = data
+          // reverse 数组倒序
+          this.originData = data.reverse()
         } else {
           this.$message.error('获取数据失败！')
         }
