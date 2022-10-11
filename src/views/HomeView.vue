@@ -48,6 +48,8 @@ export default {
   },
   mounted() {
     this.setUpHeight()
+    // console.log(this.$store.state)
+    // console.log(this)
   },
   // watch: {
   //   windowWidth(val) {

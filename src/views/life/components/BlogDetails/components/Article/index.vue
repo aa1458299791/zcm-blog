@@ -69,4 +69,7 @@ export default {
     }
   }
 }
+::v-deep img {
+  width: 100% !important;
+}
 </style>

@@ -69,4 +69,8 @@ export default {
     }
   }
 }
+// 解决富文本编辑器的图片过大问题
+::v-deep img {
+  width: 100% !important;
+}
 </style>
