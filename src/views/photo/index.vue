@@ -13,6 +13,7 @@
 import PhotoContent from './components/PhotoContent'
 import Wrapper from './components/Wrapper'
 // import axios from 'axios'
+
 export default {
   name: 'photo',
   components: {

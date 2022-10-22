@@ -7,13 +7,14 @@ import 'element-ui/lib/theme-chalk/index.css'
 import 'element-ui/lib/theme-chalk/display.css'
 import waterfall from 'vue-waterfall2' // 瀑布流
 import axios from 'axios'
+import VueParticles from 'vue-particles' // 引入粒子动画效果
 
 axios.defaults.baseURL = 'http://1.15.171.11:3000/' // 给axios一个默认链接
 Vue.prototype.$http = axios
 // Vue.use(axios)
 
 Vue.use(waterfall)
-
+Vue.use(VueParticles)
 Vue.use(ElementUI)
 
 Vue.config.productionTip = false

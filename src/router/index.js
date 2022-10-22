@@ -62,8 +62,12 @@ const routes = [
     ]
   },
   {
-    path: '/edit',
+    path: '/edit', // 编辑
     component: () => import('../views/wenben')
+  },
+  {
+    path: '/login', // 登录
+    component: () => import('../views/LoginPage')
   }
   // {
   //   path: '/about',
@@ -77,9 +81,30 @@ const routes = [
 ]
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: 'hash', // history
   base: process.env.BASE_URL,
   routes
+})
+
+// 配置路由守卫      第一个参数去往目标路由对象，第二个参数是来源的路由对象，第三个参数是接下来执行的操作
+router.beforeEach((to, form, next) => {
+  // 如果访问编辑页，则判断是否有token
+  if (to.path === '/edit') {
+    const token = localStorage.getItem('token')
+
+    if (!token) {
+      return next('/login')
+    } else {
+      return next()
+    }
+  }
+  // 如果用户未登录，则跳转到/login
+  // const userinfo = JSON.parse(sessionStorage.getItem('userinfo'))
+  // if (!userinfo) {
+  //   return next('/login')
+  // }
+  // 如果用户已登录，则放行
+  next()
 })
 
 export default router

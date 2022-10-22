@@ -1,5 +1,7 @@
 <template>
   <div class="edit_text">
+    <el-page-header @back="goBack" content="发布文章"></el-page-header>
+
     <el-tabs v-model="activeName" @tab-click="handleClick">
       <el-tab-pane label="博客文章" name="first">
         <WenBenBlog :postLink="postLink[0]"></WenBenBlog>
@@ -36,6 +38,10 @@ export default {
     }
   },
   methods: {
+    // 返回
+    goBack() {
+      this.$router.back()
+    },
     handleClick(tab, event) {
       console.log(tab.index, event)
     }

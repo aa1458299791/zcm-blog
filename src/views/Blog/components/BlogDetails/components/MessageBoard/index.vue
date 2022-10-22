@@ -5,7 +5,7 @@
       v-for="item in MessageBoardList"
       :key="item.id"
     >
-      <!-- 用户头像 -名字 -->
+    <!-- 用户头像 -名字 -->
       <div class="user_information">
         <!-- 头像 -->
         <div class="head_portrait">
