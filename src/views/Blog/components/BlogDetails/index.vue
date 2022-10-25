@@ -110,5 +110,6 @@ export default {
 .blog_details {
   width: 100%;
   height: 100%;
+  padding: 50px 0;
 }
 </style>

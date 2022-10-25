@@ -2,7 +2,9 @@
   <div class="blog">
     <div class="exhibition">
       <div class="content_box">
+        <!-- <Snowflake class="Snowflake"></Snowflake> -->
         <el-row>
+          <!-- <Snowflake class="Snowflake"></Snowflake> -->
           <el-col :xs="1" :sm="2" :md="6" :lg="6" :xl="6">&nbsp;</el-col>
           <!-- 中间内容  el-empty空页面  -->
           <el-col
@@ -42,6 +44,7 @@
 
 <script>
 import contentBox from './components/contentBox'
+// import Snowflake from '@/components/Snowflake'
 export default {
   name: 'Blog',
   components: { contentBox },
@@ -141,11 +144,16 @@ export default {
 
 <style lang="scss" scoped>
 .blog {
+  z-index: 1;
+  padding-bottom: 50px;
   // overflow: hidden;
 }
 ::v-deep .el-pagination {
   margin-top: 10px;
   display: flex;
   justify-content: center;
+}
+.Snowflake {
+  z-index: 0;
 }
 </style>

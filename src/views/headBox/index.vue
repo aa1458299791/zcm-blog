@@ -166,7 +166,7 @@ export default {
   .el-menu {
     // width: 100%;
     height: 100%;
-    background-color: #2e2e33;
+    // background-color: #2e2e33;
     .el-row {
       margin: 0 auto;
     }

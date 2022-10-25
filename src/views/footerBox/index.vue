@@ -36,7 +36,7 @@ export default {
 <style lang="scss" scoped>
 .footer_box {
   // height: 200px;
-  margin-top: 50px;
+  // margin-top: 50px;
   padding: 30px 0;
   background-color: #333333;
   .ceshi {

@@ -140,6 +140,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.blog {
+  padding-bottom: 50px;
+}
 ::v-deep .el-pagination {
   margin-top: 10px;
   display: flex;

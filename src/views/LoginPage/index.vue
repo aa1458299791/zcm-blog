@@ -168,8 +168,8 @@ export default {
   name: 'LoginPage',
   data() {
     return {
-      account: 'Xiaoming', // 账号
-      password: 'caonima123', // 密码
+      account: '', // 账号
+      password: '', // 密码
       pageIndex: 1, // 切换页面
       // 注册表单信息
       ruleForm: {

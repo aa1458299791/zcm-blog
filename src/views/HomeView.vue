@@ -2,6 +2,7 @@
   <div class="home">
     <headBox class="head_box" @handle-select="handleSelect"></headBox>
     <div class="exhibition" v-bind:style="{ minHeight: Height + 'px' }">
+      <Snowflake></Snowflake>
       <router-view></router-view>
     </div>
     <footerBox class="footer_box"></footerBox>
@@ -10,6 +11,7 @@
 </template>
 
 <script>
+import Snowflake from '@/components/Snowflake'
 // @ is an alias to /src
 // import HelloWorld from '@/components/HelloWorld.vue'
 import headBox from './headBox'
@@ -19,7 +21,8 @@ export default {
   name: 'HomeView',
   components: {
     headBox,
-    footerBox
+    footerBox,
+    Snowflake
     // wenben
 
     //   // HelloWorld
@@ -114,10 +117,12 @@ export default {
   .head_box {
   }
   // 展示
-  .exhibition {
+  ::v-deep .exhibition {
+    position: relative;
+    overflow: hidden;
     //  height: 500px;
 
-    margin-top: 30px;
+    // margin-top: 30px;
     // display: flex;
     // flex-direction: row;
     // justify-content: space-between;
